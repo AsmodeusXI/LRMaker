@@ -1,3 +1,19 @@
-.body {
-	
+.matchDay {
+	border: dotted 1px red;
+	margin: auto;
+	padding: 10px;
+}
+
+.matchDayDateTime {
+
+}
+
+.match {
+	border: solid 1px black;
+	margin: auto;
+	padding: 5px;
+}
+
+.matchButton {
+
 }

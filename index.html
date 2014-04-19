@@ -3,20 +3,23 @@
 	<head>
 		<title>TL LoL LR Thread Creator</title>
 		<script type="text/javascript" src="src/main.js"></script>
+		<script src="src/jquery/jquery-1.11.0.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="style/style.css">
 	</head>
 
 	<body>
 		<div id="overall">
+
+			<h1>TL LoL LR Thread Generator</h1>
+
 			Top Image: <input type="text" name="top-image" placeholder="URL to banner"></input>
-
-			<br />
-			<br />
-
+			<br>
+			Match Tracker: <input type="text" name="match-tracker" placeholder="Match Tracker URL"></input> 
+			<br>
+			<br>
 			<button onclick="createMatchDay()">Add Match Day</button>
-			<div id="matchDay">
-
-			</div>
+			<button onclick="clearMatchDays()">Clear Match Days</button>
+			<button onclick="createLR()">Create LR</button>
 		</div>
 	</body>
 </html>
