@@ -142,7 +142,20 @@ function createLR() {
 		createMatchDayLR(LRtext, this);
 	});
 
-	$(LRtext).append("[hr]\n[img]http://i.imgur.com/QARj1.png[/img]\n\n");
+	/* RESULTS SECTION */
+	$(LRtext).append("[img]http://i.imgur.com/L6Pww.png[/img]\n\n");
+	$(".matchDay").each(function() {
+		//createMatchDayLR(LRtext, this);
+	});
+
+	/* POLLS SECTION */
+	$(LRtext).append("\n[hr]\n[img]http://i.imgur.com/0PxXd.png[/img]\n\n");
+	$(".matchDay").each(function() {
+		//createMatchDayLR(LRtext, this);
+	});
+
+	/* VODS AND FOOTER SECTION */
+	$(LRtext).append("\n[hr]\n[img]http://i.imgur.com/QARj1.png[/img]\n\n");
 	$(LRtext).append("[spoiler][url=http://vods.leaguepedia.com/tournaments/]LoLVODs[/url][/spoiler][/center]\n");
 	$(LRtext).append("[hr][center][small]Thanks to Shiroiusagi for the banner.[/small][/center]");
 }
