@@ -145,13 +145,13 @@ function createLR() {
 	/* RESULTS SECTION */
 	$(LRtext).append("[img]http://i.imgur.com/L6Pww.png[/img]\n\n");
 	$(".matchDay").each(function() {
-		//createMatchDayLR(LRtext, this);
+		createMatchDayResults(LRtext, this);
 	});
 
 	/* POLLS SECTION */
 	$(LRtext).append("\n[hr]\n[img]http://i.imgur.com/0PxXd.png[/img]\n\n");
 	$(".matchDay").each(function() {
-		//createMatchDayLR(LRtext, this);
+		createMatchDayPolls(LRtext, this);
 	});
 
 	/* VODS AND FOOTER SECTION */
@@ -199,4 +199,20 @@ function createMatchLR(LRtext, currentMatch) {
 	$(LRtext).append("[time]" + gameTime + " " + gameTZ + "[/time]\n");
 
 	$(LRtext).append("[spoiler=Bans and Picks]\n[/spoiler]\n\n");
+}
+
+function createMatchDayResults(LRtext, currentMatchDay) {
+
+}
+
+function createMatchResults(LRtext, currentMatch) {
+
+}
+
+function createMatchDayPolls(LRtext, currentMatchDay) {
+
+}
+
+function createMatchPolls(LRtext, currentMatch) {
+
 }
