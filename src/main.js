@@ -199,9 +199,9 @@ Create the actual match BBCode
 function createMatchLR(LRtext, currentMatch) {
 
 	var team1 = getTeam("team1", currentMatch);
-	var team1img = getTeamImg("team1");
+	var team1img = getTeamImg("team1", currentMatch);
 	var team2 = getTeam("team2", currentMatch);
-	var team2img = getTeamImg("team2");
+	var team2img = getTeamImg("team2", currentMatch);
 
 	var gameTime = $("input[name='game-time']", currentMatch).val();
 	var gameTZ = $("input[name='game-tz']", currentMatch).val();
