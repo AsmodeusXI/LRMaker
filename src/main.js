@@ -9,6 +9,8 @@ var XDGimg = 'http://i.imgur.com/jklm7lY.png';
 var DIGimg = 'http://i.imgur.com/IErbRST.png';
 var EGimg = 'http://i.imgur.com/9YA9ffr.png';
 var CSTimg = 'http://i.imgur.com/jLDb8ge.png';
+var LMGimg = 'http://i.imgur.com/E25g0Ie.png';
+var COLimg = 'http://i.imgur.com/3kaTFBe.png';
 
 /*
 Create a match day 
@@ -250,14 +252,16 @@ function createMatchSpoilers(LRtext, currentMatch) {
 Adds teams to the dropdowns (should be more dynamic)
 */
 function addNATeams(teamDropdown) {
-	$(teamDropdown).append(createTeamOption('TSM',TSMimg));
-	$(teamDropdown).append(createTeamOption('CLG',CLGimg));
-	$(teamDropdown).append(createTeamOption('C9',C9img));
+	$(teamDropdown).append(createTeamOption('Team Solo Mid',TSMimg));
+	$(teamDropdown).append(createTeamOption('Counter Logic Gaming',CLGimg));
+	$(teamDropdown).append(createTeamOption('Cloud9 HyperX',C9img));
 	$(teamDropdown).append(createTeamOption('XDG',XDGimg));
-	$(teamDropdown).append(createTeamOption('EG',EGimg));
-	$(teamDropdown).append(createTeamOption('DIG',DIGimg));
-	$(teamDropdown).append(createTeamOption('CST',CSTimg));
-	$(teamDropdown).append(createTeamOption('CRS',CRSimg));
+	$(teamDropdown).append(createTeamOption('Evil Geniuses',EGimg));
+	$(teamDropdown).append(createTeamOption('Dignitas',DIGimg));
+	$(teamDropdown).append(createTeamOption('Team Coast',CSTimg));
+	$(teamDropdown).append(createTeamOption('Curse Gaming',CRSimg));
+	$(teamDropdown).append(createTeamOption('LMQ',LMQimg));
+	$(teamDropdown).append(createTeamOption('compLexity Gaming',COLimg));
 	/* ADD OTHER TEAMS HERE */
 }
 
