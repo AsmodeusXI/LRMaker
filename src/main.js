@@ -1,6 +1,10 @@
 /* 
 Image variables for teams (should be more dynamic)
 */
+
+/*
+NA Teams
+*/
 var TSMimg = 'http://i.imgur.com/U5YbY2u.png';
 var CLGimg = 'http://i.imgur.com/vn4ZQES.png';
 var C9img = 'http://i.imgur.com/kfEe9Gx.png';
@@ -11,6 +15,18 @@ var EGimg = 'http://i.imgur.com/9YA9ffr.png';
 var CSTimg = 'http://i.imgur.com/jLDb8ge.png';
 var LMQimg = 'http://i.imgur.com/E25g0Ie.png';
 var COLimg = 'http://i.imgur.com/3kaTFBe.png';
+
+/*
+EU Teams
+*/
+var GMBimg = 'http://i.imgur.com/5ouorpi.png';
+var ALLimg = 'http://i.imgur.com/T7SJGsD.png';
+var FNCimg = 'http://i.imgur.com/FLMz7aU.png';
+var ROCimg = 'http://i.imgur.com/cXaBSt7.png';
+var MILimg = 'http://i.imgur.com/iZernzx.png';
+var SKimg = 'http://i.imgur.com/2VPM8RE.png';
+var SHCimg = 'http://i.imgur.com/Mh4Wu8y.png';
+var CWimg = 'http://i.imgur.com/9wq8yzE.png';
 
 /*
 Create a match day 
@@ -100,7 +116,15 @@ function createTeamDropdown(teamNo) {
 	var ddName = "team" + teamNo;
 	var teamDropdown = document.createElement('select');
 	teamDropdown.id = ddName;
-	addNATeams(teamDropdown);
+	var region = $('#pick-region').val();
+	if(region == 'NA') {
+		addNATeams(teamDropdown);
+	} else if (region == 'EU') {
+		addEUTeams(teamDropdown);
+	} else /* ADD ALL TEAMS */ {
+		addNATeams(teamDropdown);
+		addEUTeams(teamDropdown);
+	}
 	return teamDropdown;
 }
 
@@ -168,7 +192,6 @@ function createLR() {
 	});
 
 	/* RESULTS SECTION */
-	insertBreak(LRtext)
 	$(LRtext).append("[img]http://i.imgur.com/L6Pww.png[/img]\n\n");
 	$(".matchDay").each(function() {
 		createMatchDaySpoilers(LRtext, this);
@@ -207,6 +230,8 @@ function createMatchDayLR(LRtext, currentMatchDay) {
 	$(".match", currentMatchDay).each(function() {
 		createMatchLR(LRtext, this);
 	});
+
+	insertBreak(LRtext);
 }
 
 /*
@@ -265,7 +290,7 @@ function createMatchSpoilers(LRtext, currentMatch) {
 }
 
 /*
-Adds teams to the dropdowns (should be more dynamic)
+Adds NA teams to the dropdowns (should be more dynamic)
 */
 function addNATeams(teamDropdown) {
 	$(teamDropdown).append(createTeamOption('Team Solo Mid',TSMimg));
@@ -278,6 +303,21 @@ function addNATeams(teamDropdown) {
 	$(teamDropdown).append(createTeamOption('Curse Gaming',CRSimg));
 	$(teamDropdown).append(createTeamOption('LMQ',LMQimg));
 	$(teamDropdown).append(createTeamOption('compLexity Gaming',COLimg));
+	/* ADD OTHER TEAMS HERE */
+}
+
+/*
+Adds EU teams to the dropdowns
+*/
+function addEUTeams(teamDropdown) {
+	$(teamDropdown).append(createTeamOption('Supa Hot Crew',SHCimg));
+	$(teamDropdown).append(createTeamOption('SK Gaming',SKimg));
+	$(teamDropdown).append(createTeamOption('Copenhagen Wolves',CWimg));
+	$(teamDropdown).append(createTeamOption('Alliance',ALLimg));
+	$(teamDropdown).append(createTeamOption('Gambit Gaming',GMBimg));
+	$(teamDropdown).append(createTeamOption('Fnatic',FNCimg));
+	$(teamDropdown).append(createTeamOption('Millenium',MILimg));
+	$(teamDropdown).append(createTeamOption('Team ROCCAT',ROCimg));
 	/* ADD OTHER TEAMS HERE */
 }
 
