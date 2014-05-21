@@ -9,7 +9,7 @@ var XDGimg = 'http://i.imgur.com/jklm7lY.png';
 var DIGimg = 'http://i.imgur.com/IErbRST.png';
 var EGimg = 'http://i.imgur.com/9YA9ffr.png';
 var CSTimg = 'http://i.imgur.com/jLDb8ge.png';
-var LMGimg = 'http://i.imgur.com/E25g0Ie.png';
+var LMQimg = 'http://i.imgur.com/E25g0Ie.png';
 var COLimg = 'http://i.imgur.com/3kaTFBe.png';
 
 /*
@@ -77,9 +77,11 @@ function createMatch(appendElement, elementClass) {
 	$(matchDiv).append('<h4>Match</h4>')
 	$(matchDiv).append('Team 1: ');
 	$(matchDiv).append(createTeamDropdown(1));
+	$(matchDiv).append(createTeamRecord(1));
 	$(matchDiv).append('<br>');
 	$(matchDiv).append('Team 2: ');
 	$(matchDiv).append(createTeamDropdown(2));
+	$(matchDiv).append(createTeamRecord(2));
 	$(matchDiv).append('<br>');
 	$(matchDiv).append('Game Time: ');
 	$(matchDiv).append('<input name="game-time" type="time"></input>');
@@ -100,6 +102,18 @@ function createTeamDropdown(teamNo) {
 	teamDropdown.id = ddName;
 	addNATeams(teamDropdown);
 	return teamDropdown;
+}
+
+/*
+Creates a place to enter a team's current record
+*/
+function createTeamRecord(teamNo) {
+	var inputFieldName = "team" + teamNo + "record";
+	var teamRecord = document.createElement('input');
+	teamRecord.id = inputFieldName;
+	teamRecord.type = 'text';
+	teamRecord.placeholder = 'Team Record';
+	return teamRecord;
 }
 
 /*
@@ -202,8 +216,10 @@ function createMatchLR(LRtext, currentMatch) {
 
 	var team1 = getTeam("team1", currentMatch);
 	var team1img = getTeamImg("team1", currentMatch);
+	var team1record = getTeamRecord("team1", currentMatch);
 	var team2 = getTeam("team2", currentMatch);
 	var team2img = getTeamImg("team2", currentMatch);
+	var team2record = getTeamRecord("team2", currentMatch);
 
 	var gameTime = $("input[name='game-time']", currentMatch).val();
 	var gameTZ = $("input[name='game-tz']", currentMatch).val();
@@ -215,7 +231,7 @@ function createMatchLR(LRtext, currentMatch) {
 	$(LRtext).append(" [indent] ");
 	$(LRtext).append("[img]" + team2img + "[/img]\n\n");
 
-	$(LRtext).append("[b]" + team1 + " [indent][indent][indent][indent][indent][indent][indent][indent][indent][indent] " + team2 + "[/b]\n");
+	$(LRtext).append("[b]" + team1 + " " + team1record + " [indent][indent][indent][indent][indent][indent][indent][indent][indent][indent] " + team2 + " " + team2record + "[/b]\n");
 	$(LRtext).append("[time]" + gameTime + " " + gameTZ + "[/time]\n");
 
 	$(LRtext).append("[spoiler=Bans and Picks]\n[/spoiler]\n\n");
@@ -295,6 +311,10 @@ function getTeam(team, currentMatch) {
 
 function getTeamImg(team, currentMatch) {
 	return $("#" + team, currentMatch).val();
+}
+
+function getTeamRecord(team, currentMatch) {
+	return $("#" + team + "record", currentMatch).val();
 }
 
 function insertBreak(LRtext) {
