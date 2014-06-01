@@ -178,7 +178,12 @@ function createLR() {
 	/* Match Tracker image */
 	$(LRtext).append("[img]http://i.imgur.com/oBJH4Bs.png[/img][url=");
 	$(LRtext).append( $("input[name='match-tracker']").val() );
-	$(LRtext).append("]LoLeSports Match Tracker[/url]\n\n");
+	$(LRtext).append("]LoLeSports Match Tracker[/url]\n");
+
+	/* Leaguepedia Link */
+	$(LRtext).append("[url=");
+	$(LRtext).append( $("input[name='lp-link']").val() ):
+	$(LRtext).append("] Leaguepedia[/url]\n\n");
 
 	/* Stream Section */
 	$(LRtext).append("[hr]\n[img]http://i.imgur.com/08h88.png[/img]\n\n");
