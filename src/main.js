@@ -182,7 +182,7 @@ function createLR() {
 
 	/* Leaguepedia Link */
 	$(LRtext).append("[url=");
-	$(LRtext).append( $("input[name='lp-link']").val() ):
+	$(LRtext).append( $("input[name='lp-link']").val() );
 	$(LRtext).append("] Leaguepedia[/url]\n\n");
 
 	/* Stream Section */
